@@ -28,6 +28,7 @@ class CompanyResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $table->paginated(true);//hilangkan paginate
         return CompaniesTable::configure($table);
     }
 

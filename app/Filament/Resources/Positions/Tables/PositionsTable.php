@@ -17,7 +17,8 @@ class PositionsTable
                 // buat textcolumn 'name', 'description', 'allowance'
                 TextColumn::make('name'),
                 TextColumn::make('description'),
-                TextColumn::make('allowance'),
+                TextColumn::make('allowance')
+                ->numeric(locale: 'id'),
             ])
             ->filters([
                 //

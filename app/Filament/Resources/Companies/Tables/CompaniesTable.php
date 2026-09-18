@@ -24,6 +24,16 @@ class CompaniesTable
                     ->label('Email address')
                     ->searchable(),
                 TextColumn::make('phone_number')
+                    ->formatStateUsing(function ($state) {
+                        $state = preg_replace('/[^0-9]/', '', $state); // ambil digit saja
+            
+                        // Format: 0812-3456-7890 (4-4-4)
+                        $prefix = substr($state, 0, 4);
+                        $mid = substr($state, 4, 4);
+                        $suffix = substr($state, 8);
+
+                        return $prefix . '-' . $mid . '-' . $suffix;
+                    })
                     ->searchable(),
                 ImageColumn::make('logo')
                     ->disk('public')
@@ -41,10 +51,10 @@ class CompaniesTable
             ->filters([
                 //
             ])
-            ->recordActions([
-                EditAction::make(),
-                // DeleteAction::make(),
-            ])
+            // ->recordActions([
+            //     EditAction::make(),
+            //     DeleteAction::make(),
+            // ])
             ->toolbarActions([
                 // BulkActionGroup::make([
                 //     DeleteBulkAction::make(),

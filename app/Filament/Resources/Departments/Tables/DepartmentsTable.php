@@ -16,26 +16,36 @@ class DepartmentsTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                ->searchable(),
+                    ->searchable(),
                 TextColumn::make('description')
-                ->searchable(),
+                    ->searchable(),
                 TextColumn::make('address')
-                ->searchable(),
+                    ->searchable(),
                 TextColumn::make('email')
-                ->searchable(),
+                    ->searchable(),
                 TextColumn::make('phone_number')
-                ->searchable(),
+                    ->formatStateUsing(function ($state) {
+                        $state = preg_replace('/[^0-9]/', '', $state); // ambil digit saja
+            
+                        // Format: 0812-3456-7890 (4-4-4)
+                        $prefix = substr($state, 0, 4);
+                        $mid = substr($state, 4, 4);
+                        $suffix = substr($state, 8);
+
+                        return $prefix . '-' . $mid . '-' . $suffix;
+                    })
+                    ->searchable(),
             ])
             ->filters([
                 //
-            ])
-            ->recordActions([
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
             ]);
+            // ->recordActions([
+            //     EditAction::make(),
+            // ])
+            // ->toolbarActions([
+            //     BulkActionGroup::make([
+            //         DeleteBulkAction::make(),
+            //     ]),
+            // ]);
     }
 }

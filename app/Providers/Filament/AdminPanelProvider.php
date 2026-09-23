@@ -36,6 +36,8 @@ class AdminPanelProvider extends PanelProvider
                 'danger' => Color::Red,
                 'info' => Color::Blue,
             ])
+            ->brandName('Enterprise')
+            ->globalSearch(false)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -62,6 +64,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 'Human Resources Management',
+                'Inventory',
                 'Settings'
             ]);
     }

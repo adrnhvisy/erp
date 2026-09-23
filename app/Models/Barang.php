@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'kode_barang',
@@ -17,5 +18,8 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 ])]
 class Barang extends Model
 {
-    //
+    public function mutasiStoks(): HasMany
+    {
+        return $this->hasMany(MutasiStok::class); 
+    }
 }

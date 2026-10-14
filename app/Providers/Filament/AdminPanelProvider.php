@@ -66,8 +66,8 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop() // Membuat sidebar bisa di-collapse (minimize) jadi ikon saja di desktop
             ->sidebarFullyCollapsibleOnDesktop()
             ->navigationGroups([
-                'Human Resources Management',
                 'Skills',
+                'Human Resources Management',
                 'Inventory',
                 'Settings'
             ]);

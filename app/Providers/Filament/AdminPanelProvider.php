@@ -62,6 +62,9 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->spa() // Opsional: membuat navigasi lebih cepat tanpa reload halaman
+            ->sidebarCollapsibleOnDesktop() // Membuat sidebar bisa di-collapse (minimize) jadi ikon saja di desktop
+            ->sidebarFullyCollapsibleOnDesktop()
             ->navigationGroups([
                 'Human Resources Management',
                 'Inventory',

@@ -20,7 +20,8 @@ class EmployeesTable
                     ->disk('public')
                     ->visibility('public')
                     ->width(60)
-                    ->height(60),
+                    ->height(60)
+                    ->circular(),
                 TextColumn::make('user.name')//user.name mengambil nilai dari relasi user
                     ->label('Name')
                     ->sortable()

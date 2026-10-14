@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => Color::Teal,
                 'secondary' => Color::Gray,
                 'success' => Color::Green,
                 'warning' => Color::Yellow,
@@ -67,6 +67,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->navigationGroups([
                 'Human Resources Management',
+                'Skills',
                 'Inventory',
                 'Settings'
             ]);

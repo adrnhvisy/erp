@@ -16,24 +16,27 @@ class EmployeeSkillsTable
     {
         return $table
             ->columns([
-                TextColumn::make('employee_id')
-                    ->numeric()
+                TextColumn::make('employee.user.name')
+                    ->label('Employee')
                     ->sortable(),
-                TextColumn::make('skill_type_id')
-                    ->numeric()
+                TextColumn::make('skillType.name')
+                    ->label('Skill Type')
                     ->sortable(),
-                TextColumn::make('skill_level_id')
-                    ->numeric()
+                TextColumn::make('skillLevel.name')
+                    ->label('Skill Level')
                     ->sortable(),
-                TextColumn::make('skill_id')
-                    ->numeric()
+                TextColumn::make('skill.name')
+                    ->label('Skill')
                     ->sortable(),
                 TextColumn::make('level_progress')
                     ->numeric()
                     ->sortable(),
                 IconColumn::make('is_default_level')
                     ->boolean(),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->label('Image')
+                    ->imageHeight(40)
+                    ->circular(),
                 TextColumn::make('effective_date')
                     ->date()
                     ->sortable(),

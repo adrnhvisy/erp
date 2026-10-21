@@ -19,7 +19,7 @@ class EmployeeSkillResource extends Resource
 {
     protected static ?string $model = EmployeeSkill::class;
     
-    protected static string|UnitEnum|null $navigationGroup = 'Skills';
+    protected static string|UnitEnum|null $navigationGroup = 'Human Resources Management';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

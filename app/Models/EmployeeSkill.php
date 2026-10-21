@@ -13,13 +13,13 @@ class EmployeeSkill extends Model
     {
         return $this->belongsTo(Employee::class);
     }
-    public function skill()
-    {
-        return $this->belongsTo(Skill::class);
-    }
     public function skillType()
     {
         return $this->belongsTo(SkillType::class);
+    }
+    public function skill()
+    {
+        return $this->belongsTo(Skill::class);
     }
     public function skillLevel()
     {

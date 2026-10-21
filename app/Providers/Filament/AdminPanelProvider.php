@@ -67,8 +67,9 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->navigationGroups([
                 'Human Resources Management',
-                'Inventory',
-                'Settings'
+                'Learning Management System',
+                'Settings',
+                'Inventory'
             ]);
     }
 }
